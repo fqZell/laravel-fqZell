@@ -1,0 +1,66 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    bottom: 0;
+}
+
+body {
+    font-family: 'Libre Franklin', sans-serif;
+}
+
+li {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+nav {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    align-content: center;
+
+    padding: 30px 250px 0 250px;
+}
+
+ul {
+    display: flex;
+    gap: 30px;
+}
+
+.AuthUser {
+    text-align: center;
+
+    padding: ;
+}
+
+.AuthUser h1 {
+    font-size: 24px;
+
+    padding: 50px 0 50px 0;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.form-group label {
+    padding: 10px;
+    text-align: left;
+}
+
+.form-group input {
+    padding: 10px 350px 10px 10px;
+    outline: none;
+    border: 2px solid #000;
+    border-radius: 8px;
+
+    font-size: 16px;
+}
