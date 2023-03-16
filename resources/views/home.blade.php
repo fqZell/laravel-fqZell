@@ -1,3 +1,11 @@
 @extends('layout.layout')
 
-@section('Home Page')
+@section('page_title', 'Home')
+
+@section('content')
+
+    @include('components.slider')
+
+    @include('components.products')
+
+@endsection

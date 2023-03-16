@@ -23,12 +23,12 @@
 
                 @guest
                     <li><a href="{{ route('signUp') }}">Регистрация</a></li>
-                    <li><a href="#">Авторизация</a></li>
+                    <li><a href="{{ route('signIn') }}">Авторизация</a></li>
                 @endguest
 
                 @auth
-                    <li><a href="#">user_name</a></li>
-                    <li><a href="#">Выход</a></li>
+                    <li><a href="#">{{ Auth::user()->username }}</a></li>
+                    <li><a href="{{ route('auth.logOut') }}">Выход</a></li>
                 @endauth
 
             </ul>

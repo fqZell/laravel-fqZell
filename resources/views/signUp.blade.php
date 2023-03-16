@@ -1,6 +1,6 @@
 @extends('layout.layout')
 
-@section('page_title', 'signUp Page')
+@section('page_title', 'signUp')
 
 @section('content')
 
@@ -28,12 +28,24 @@
 
             <div class="form-group">
                 <label for="password">Повторите пароль:</label>
-                <input type="password" name="password">
+                <input type="password" name="re_password">
             </div>
 
-            <button>Регистрация</button>
+            <button class="form-button">Регистрация</button>
 
         </form>
+
+        @if($errors->any())
+
+            @foreach($errors->all() as $error)
+
+                <div class="alert alert-danger" role="alert">
+                    {{ $error }}
+                </div>
+
+            @endforeach
+
+        @endif
 
     </div>
 

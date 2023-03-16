@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\SignInRequest;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -29,6 +30,24 @@ class AuthController extends Controller
         $user = User::query()->create($validated);
 
         Auth::login($user);
+
+        return redirect()->route('home');
+    }
+
+    public function signIn(SignInRequest $request)
+    {
+        $validated = $request->validated();
+
+        if (!Auth::attempt($validated)) {
+            return back()->withErrors(['Неверные данные']);
+        }
+
+        return redirect()->route('home');
+    }
+
+    public function logOut()
+    {
+        Auth::logout();
 
         return redirect()->route('home');
     }

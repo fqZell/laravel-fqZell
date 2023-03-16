@@ -7,10 +7,17 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>@yield('page_title')</title>
     <link rel="stylesheet" href="{{ asset("css/style.css") }}">
+    <script src="{{ asset("js/index.js") }}" defer></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Libre+Franklin:wght@300;400;500;700&display=swap"
           rel="stylesheet">
+    <link
+        rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css"
+    />
+
+    <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
 </head>
 <body>
 @include('components.header')
