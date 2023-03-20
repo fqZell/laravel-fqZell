@@ -1,6 +1,6 @@
 @extends('layout.layout')
 
-@section('page_title', 'sigIn')
+@section('page_title', 'CreateForm')
 
 @section('content')
 
@@ -8,7 +8,7 @@
 
         <h1>Добавить товар</h1>
 
-        <form action="{{ route('auth.create') }}" method="post">
+        <form action="{{ route('products.create') }}" method="post">
 
             @csrf
             <div class="form-group">
