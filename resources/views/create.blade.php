@@ -18,7 +18,7 @@
 
             <div class="form-group">
                 <label for="content">Описание</label>
-                <input type="text" name="content" value="{{ old('content') }}">
+                <textarea name="content" cols="24" rows="6" value="{{ old('content') }}"></textarea>
             </div>
 
             <div class="form-group">
@@ -34,7 +34,7 @@
 
             @foreach($errors->all() as $error)
 
-                <div class="alert alert-danger" role="alert">
+                <div class="error" role="alert">
                     {{ $error }}
                 </div>
 

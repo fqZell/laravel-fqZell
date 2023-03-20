@@ -2,21 +2,21 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Products;
+use App\Models\Product;
 use Illuminate\Http\Request;
 
 class IndexController extends Controller
 {
     public function home(Request $request)
     {
-        $products = Products::query()->where('is_published', '>', '0');
+        $products = Product::query();
 
         if ($request->get('query')) {
             $query = $request->get('query');
             $products = $products->where('title', 'LIKE', "%$query%");
         }
 
-        $products = $products->get();
+        $products = $products->paginate(9)->withQueryString();
 
         return view('home', [
             'products' => $products
@@ -32,4 +32,9 @@ class IndexController extends Controller
     {
         return view('signIn');
     }
+
+//    public function createForm()
+//    {
+//        return view('createForm');
+//    }
 }
